@@ -6,3 +6,4 @@ function App() {
   Redux toolkit basic
   </>
 }
+export default App
