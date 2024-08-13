@@ -10,3 +10,5 @@ Currently, two official plugins are available:
 ``` 
 npm i @reduxjs/toolkit react-redux
 ```
+### Immer 
+It simplifies handling immutable data by allowing you to write code that appears to mutate the state directly, while actually creating new copies of the state with the desired updates.
