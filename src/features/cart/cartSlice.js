@@ -22,19 +22,24 @@ const cartSlice = createSlice({
         const id =payload
         const item = state.cartItems.find((item)=>item.id===id)
         item.amount +=1;
+       
         
     }
     ,
     decreaseItem:(state,{payload})=>{
          const id = payload
          const item = state.cartItems.find((item) => item.id === id)
-           if (item.amount>0){
              item.amount -= 1
-           }
-         
 
+           
+    },
+    calculateTotal:(state)=>{
+        const total = state.cartItems.reduce((previousValue, currentValue)=>{
+            return previousValue+currentValue.amount*currentValue.price},0)
+        state.total = total
+        
     }
    }
 })
-export const {clearCart, removeItem, increaseItem, decreaseItem} = cartSlice.actions
+export const {clearCart, removeItem, increaseItem, decreaseItem,calculateTotal} = cartSlice.actions
 export default cartSlice.reducer

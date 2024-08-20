@@ -28,7 +28,14 @@ const CartItem = ({ id, img, title, price, amount }) => {
         <div className="col-2 text-center">
           <BsArrowDownCircleFill
             className="icons fs-3 text-success "
-            onClick={() => dispatch(decreaseItem(id))}
+            onClick={() => {
+              if(amount===1)
+              {
+                return dispatch(removeItem(id))
+              }
+            dispatch(decreaseItem(id))}
+
+            }
           />
           <div className="fs-4">{amount}</div>
           <BsArrowUpCircleFill
@@ -36,6 +43,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
             onClick={() => dispatch(increaseItem(id))}
           />
         </div>
+       
       </div>
     </div>
   )
