@@ -38,6 +38,11 @@ const cartSlice = createSlice({
             return previousValue+currentValue.amount*currentValue.price},0)
         state.total = total
         
+        const amount = state.cartItems.reduce(
+          (acc, item) => acc + item.amount,
+          0
+        )
+        state.amount = amount
     }
    }
 })
