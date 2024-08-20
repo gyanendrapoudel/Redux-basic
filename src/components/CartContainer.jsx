@@ -20,6 +20,7 @@ const CartContainer = () => {
       {cartItems.map((item) => {
         return <CartItem key={item.id} {...item} />
       })}
+      {cartItems.length>0 &&
       <footer>
         <hr />
         <div className="d-flex justify-content-between">
@@ -30,6 +31,7 @@ const CartContainer = () => {
             <button className="btn btn-outline-danger px-4 py-2 border border-2 border-danger fs-5  " onClick={()=>dispatch(clearCart())}>Clear Cart</button>
         </div>
       </footer>
+        }
     </div>
   )
 }
