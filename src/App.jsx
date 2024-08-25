@@ -21,7 +21,15 @@ function App() {
   dispatch(calculateTotal())
 
   },[cartItems])
- 
+  if(isLoading){
+    return (
+      <div className="spinner">
+        <div className="spinner-border text-primary main ">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    )
+  }
   return <div className='main'>
  
    {isClearBtnClicked && <Modal/>}
