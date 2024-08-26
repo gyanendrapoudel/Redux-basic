@@ -13,7 +13,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
     <div className="my-1">
       <div className="row align-items-center  ">
         <div className="col-10 d-flex align-items-center ">
-          <img src={img} alt={title} style={{ height: '150px' }} />
+          <img src={img} alt={title} style={{ height: '125px' }} />
           <div className="text-capitalize">
             <h4>{title}</h4>
             <p className="fs-5">${price}</p>
